@@ -1,0 +1,43 @@
+.Headerbar
+{
+    width:90%;
+    margin:0 8px;
+    
+}
+
+.Headerbar input[type=text] {
+    width: 250px;
+    float: right;
+    padding:6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    outline:none;
+    border:1px solid #ccc;
+    background-color: white;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 90%;
+  }
+
+.Button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+@media (min-width:600px){
+    .ContactData {
+        width: 500px;
+    }
+}

@@ -1,0 +1,48 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/AdventureworksContext/bin
+/AdventureworksContext/obj
+/AdverntureWorksService/bin
+/AdverntureWorksService/obj
+/Authentication/bin
+/Authentication/obj
+/ConsoleApp1/bin
+/ConsoleApp1/obj
+/DataLayer/bin
+/DataLayer/obj
+/NUnitTestShoppingCart/bin
+/NUnitTestShoppingCart/obj
+/ShoppingApi/bin
+/ShoppingApi/obj
+/ShoppingCartEntities/bin
+/ShoppingCartEntities/obj
+/ShoppingCartWeb/obj
+/ShoppingCore/bin
+/ShoppingCore/obj
+/ShoppingService/bin
+/ShoppingService/obj
+
+# Only exists if Bazel was run
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db

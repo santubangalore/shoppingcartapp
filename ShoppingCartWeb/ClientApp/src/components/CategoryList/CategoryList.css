@@ -1,0 +1,16 @@
+.Wrapper{
+      display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.CategoryList
+{
+    margin:0 8px;
+    width:100%;
+    border:1 px solid #ccc;
+     display:inline-flex;
+    height:400px;
+}
