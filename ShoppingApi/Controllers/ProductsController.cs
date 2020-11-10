@@ -41,6 +41,15 @@ namespace ShoppingApi.Controllers
             return Ok(prodList);
         }
 
+        [Authorize]
+        [HttpGet]
+        [Route("GetProductsByName/{Name}")]
+        public async Task<IActionResult> GetProductsByName(string Name)
+        {
+            var prodList = _productInterface.GetProductsByName(Name);
+            return Ok(prodList);
+        }
+
         [HttpPost]
         [Route("AddProduct")]
         public async Task<IActionResult> InsertProduct(Product product)

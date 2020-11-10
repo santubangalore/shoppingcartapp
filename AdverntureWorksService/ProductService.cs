@@ -42,6 +42,12 @@ namespace AdverntureWorksService
             return result.ToList<object>();
         }
 
+        public async Task<List<Product>> GetProductsByName(string Name)
+        {
+            var query = dbContext.Product.Where(r => r.Name.Contains(Name)).ToList();
+            return query == null ? default : query;
+        }
+
         public Task<bool> InsertProduct(Product product)
         {
             throw new NotImplementedException();
