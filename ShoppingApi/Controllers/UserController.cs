@@ -29,13 +29,17 @@ namespace ShoppingApi.Controllers
 
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Authenticate([FromBody] string username, string password)
+        [HttpPost("Test")]
+        public async Task<IActionResult> Authenticate()
         {
             var userList = userService.getUsers();
-            var validUser = userService.ValidateUser(username, password);
-            
-            return Ok();
+            List<string> townlist= new List<string>();
+            for (int i=0;i<10;i++)
+            {
+                townlist.Add("Town"+i.ToString());
+            }
+            return Ok(townlist);
+
 
         }
 

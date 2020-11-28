@@ -43,10 +43,10 @@ namespace ShoppingApi.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("GetProductsByName/{Name}")]
-        public async Task<IActionResult> GetProductsByName(string Name)
+        [Route("GetProductsByCategeoryName/{Name}")]
+        public async Task<IActionResult> GetProductsByCatName(string Name)
         {
-            var prodList = _productInterface.GetProductsByName(Name);
+            var prodList = _productInterface.GetProductsByCatName(Name);
             return Ok(prodList);
         }
 

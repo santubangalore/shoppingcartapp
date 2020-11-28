@@ -42,10 +42,14 @@ namespace AdverntureWorksService
             return result.ToList<object>();
         }
 
-        public async Task<List<Product>> GetProductsByName(string Name)
+        public async Task<List<object>> GetProductsByCatName(string Name)
         {
-            var query = dbContext.Product.Where(r => r.Name.Contains(Name)).ToList();
-            return query == null ? default : query;
+            var query = dbContext.ProductSubcategory.Join(dbContext.ProductCategory, r => r.ProductCategoryId, p => p.ProductCategoryId, (r, p) => new { r.ProductSubcategoryId, r.ProductCategoryId, p.Name }).Where(q => (q.Name == Name||q.Name.Contains(Name)) );
+
+            var result = query.Join(dbContext.Product, r => r.ProductSubcategoryId, p => p.ProductSubcategoryId, (r, p) => new { p.ProductId, p.Name, p.ProductNumber, p.StandardCost, p.ListPrice })
+                .Join(dbContext.ProductProductPhoto, r => r.ProductId, p => p.ProductId, (r, p) => new { p.ProductId, r.Name, r.ProductNumber, r.StandardCost, r.ListPrice, p.ProductPhotoId })
+                .Join(dbContext.ProductPhoto, r => r.ProductPhotoId, p => p.ProductPhotoId, (r, p) => new { r.ProductId, r.Name, r.ProductNumber, r.StandardCost, r.ListPrice, p.ProductPhotoId, p.ThumbNailPhoto });
+            return result.ToList<object>();
         }
 
         public Task<bool> InsertProduct(Product product)

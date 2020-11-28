@@ -10,7 +10,7 @@ namespace AdverntureWorksService.Contract
     {
         Task<List<Product>> GetProducts();
         Task<List<object>> GetProductsByCagtegory(int CategoryID);
-        Task<List<Product>> GetProductsByName(string Name);
+        Task<List<object>> GetProductsByCatName(string Name);
         Task<Boolean> UpdateProduct(Product product);
         Task<Boolean> InsertProduct(Product product);
         Task<Product> GetProduct(int id);
